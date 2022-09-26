@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var person = function (nm , age ){
+   this.set=function(name,age){
+        this.userName=name;
+        this.userAge=age;
+        
+   }
+
+    this.displayName = function(){
+        console.log(this.nm,this.age);
+    };
+};
+
+person.prototype.tostring = function(){
+    console.log(this.userName,this.userAge, this.address);
+
+};
+    var employee = new person();
+  employee.set("heba",22)
+    employee.displayName()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <script>
+    var Box = function(height,width,length,material,content){
+    this.height = height;
+    this.width = width;
+    this.length = length;
+    this.material = material;
+    this.content = content;
+    numberOfBooks = content.length ;
+
+
+    this.booksNum = function(){
+        return this.content.length;
+    }
+
+    this.deleteBook = function(dele){
+        for(var i=0; i < this.content.length; i++){
+            if(this.content[i].title == dele){
+                this.content.splice(i,1);
+                return `The book of  "${dele}" is deleted `;
+            
+            }
+        }
+    }
+}
+
+
+var book = function(title,chaptersNum,author,pagesNum,puplisher,copiesNum){
+    this.title = title;
+    this.numOfChapters = chaptersNum;
+    this.author = author;
+    this.numOfPages = pagesNum;
+    this.puplisher = puplisher;
+    this.numOfCopies = copiesNum;
+
+    book.count++;
+
+    book.getcount = function(){return(book.count)
+    }
+};
+
+book.count=0;
+
+var book1 = new book("Drama book",17,"mohamed",300,"ُEl-kutub",2);
+var book2 = new book("Romance book",6,"Amr",220,"mahmoud",2);
+var book3 = new book("Action book",56,"Ahmed",600,"ali",3);
+
+
+var book4 = new book("police book",8,"sara",466,"omr",31);
+var book5 = new book("imagination book",4,"heba",400,"asmaa",9);
+
+
+var myBox = new Box(100,300,600,"wood",[book1,book2,book3]);
+
+console.log(myBox);
+
+
+
+console.log(`Number of books in the box = ${myBox.booksNum()}`);
+
+
+console.log(myBox.deleteBook("Action book"));
+
+
+console.log(book.getcount());
+
+    </script>
+</body>
+</html>

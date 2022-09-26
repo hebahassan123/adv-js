@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addingfunction</title>
+</head>
+<body>
+     <script>
+        var err = new RangeError()
+        function add() {
+            var sum = 0
+        try{
+
+            if (arguments.length===0) {
+                err.message= "please enter numbers"
+                throw err}
+                else {
+                    for ( i= 0 ; i<arguments.length ; i++) {
+                        if(isNaN(arguments[i])){
+                            err.message= "add numbers"
+                            throw err;
+                            
+                            }else{
+                                sum +=arguments [i]; 
+                                
+                            }
+                        }
+                    }
+
+
+                }catch(error)
+                {console.log(error)   }
+
+
+             return sum;
+        }
+
+
+        add("sum")
+        console.log (add())
+           
+    </script>
+</body>
+</html>
